@@ -22,7 +22,7 @@ import org.mybatis.dynamic.sql.util.SqlProviderAdapter
 
 @Mapper
 interface BookMapper {
-    @SelectProvider(type=SqlProviderAdapter::class, method="select")
+    @SelectProvider(type=SqlProviderAdapter::class, method="com.book.manager.infrastructure.database.mapper.select")
     fun count(selectStatement: SelectStatementProvider): Long
 
     @DeleteProvider(type=SqlProviderAdapter::class, method="delete")
@@ -34,11 +34,11 @@ interface BookMapper {
     @InsertProvider(type=SqlProviderAdapter::class, method="insertMultiple")
     fun insertMultiple(multipleInsertStatement: MultiRowInsertStatementProvider<BookRecord>): Int
 
-    @SelectProvider(type=SqlProviderAdapter::class, method="select")
+    @SelectProvider(type=SqlProviderAdapter::class, method="com.book.manager.infrastructure.database.mapper.select")
     @ResultMap("BookRecordResult")
     fun selectOne(selectStatement: SelectStatementProvider): BookRecord?
 
-    @SelectProvider(type=SqlProviderAdapter::class, method="select")
+    @SelectProvider(type=SqlProviderAdapter::class, method="com.book.manager.infrastructure.database.mapper.select")
     @Results(id="BookRecordResult", value = [
         Result(column="id", property="id", jdbcType=JdbcType.BIGINT, id=true),
         Result(column="title", property="title", jdbcType=JdbcType.VARCHAR),

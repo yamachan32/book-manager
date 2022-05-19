@@ -13,16 +13,16 @@ import org.springframework.jdbc.core.SqlProvider
 
 @Mapper
 interface BookWithRentalMapper {
-    @SelectProvider(type = SqlProviderAdapter::class, method="select")
+    @SelectProvider(type = SqlProviderAdapter::class, method="com.book.manager.infrastructure.database.mapper.select")
     @Results(
         id = "BookWithRecordResult", value = [
             Result(column = "id", property = "id", jdbcType = JdbcType.BIGINT, id = true),
-            Result(column = "title", property = "title", jdbcType = JdbcType = JdbcType.VARCHAR),
+            Result(column = "title", property = "title", jdbcType = JdbcType.VARCHAR),
             Result(column = "author", property = "author", jdbcType = JdbcType.VARCHAR),
             Result(column = "release_date", property = "releaseDate", jdbcType = JdbcType.DATE),
             Result(column = "user_id", property = "userId", jdbcType = JdbcType.BIGINT),
-            Result(column = "rental_datetime", property = "rentalDatetime", jdbcType = JdbcType.TIMESTAMP),
-            Result(column = "return_deadline", property = "returanDeadline", jdbcType = JdbcType.TIMESTAMP)
+            Result(column = "rental_datetime", property = "rentalDateTime", jdbcType = JdbcType.TIMESTAMP),
+            Result(column = "return_deadline", property = "returnDateTime", jdbcType = JdbcType.TIMESTAMP)
         ]
     )
     fun selectMany(selectStatement: SelectStatementProvider): List<BookWithRentalRecord>
