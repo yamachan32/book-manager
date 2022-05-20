@@ -1,4 +1,4 @@
-package com.book.manager.domain.model
+package com.book.manager.infrastructure.database.mapper.custom
 
 import java.time.LocalDate
 import java.time.LocalDateTime

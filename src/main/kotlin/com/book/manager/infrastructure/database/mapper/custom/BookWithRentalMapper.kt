@@ -1,7 +1,5 @@
 package com.book.manager.infrastructure.database.mapper.custom
 
-import com.book.manager.domain.model.BookWithRentalRecord
-import com.mysql.cj.xdevapi.SelectStatement
 import org.apache.ibatis.annotations.Mapper
 import org.apache.ibatis.annotations.Result
 import org.apache.ibatis.annotations.Results
@@ -9,7 +7,6 @@ import org.apache.ibatis.annotations.SelectProvider
 import org.apache.ibatis.type.JdbcType
 import org.mybatis.dynamic.sql.select.render.SelectStatementProvider
 import org.mybatis.dynamic.sql.util.SqlProviderAdapter
-import org.springframework.jdbc.core.SqlProvider
 
 @Mapper
 interface BookWithRentalMapper {

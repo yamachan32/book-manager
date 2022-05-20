@@ -1,6 +1,6 @@
 package com.book.manager.infrastructure.database.mapper
 
-import com.book.manager.domain.model.BookWithRentalRecord
+import com.book.manager.infrastructure.database.mapper.custom.BookWithRentalRecord
 import com.book.manager.infrastructure.database.mapper.BookDynamicSqlSupport.Book
 import com.book.manager.infrastructure.database.mapper.BookDynamicSqlSupport.Book.author
 import com.book.manager.infrastructure.database.mapper.BookDynamicSqlSupport.Book.id
